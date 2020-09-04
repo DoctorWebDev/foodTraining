@@ -383,6 +383,10 @@ window.addEventListener('DOMContentLoaded', () => {
             currentSlides.textContent = slideIndex;
         }
     }
+
+    function delNotDigits(item) {
+        return +item.replace(/\D/g);
+    }
     
     indicators.classList.add('carousel-indicators');
 
@@ -432,10 +436,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
     next.addEventListener('click', () => {
-        if (offset == +slidesWidth.slice(0, slidesWidth.length - 2) * (slide.length - 1)) {
+        if (offset == delNotDigits(slidesWidth) * (slide.length - 1)) {
             offset = 0;
         } else {
-            offset += +slidesWidth.slice(0, slidesWidth.length - 2);
+            offset += delNotDigits(slidesWidth);
         }
         slidesField.style.transform = `translate(-${offset}px)`;
         
@@ -453,9 +457,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
     prev.addEventListener('click', () => {
         if (offset == 0) {        
-            offset = +slidesWidth.slice(0, slidesWidth.length - 2) * (slide.length - 1);
+            offset = delNotDigits(slidesWidth) * (slide.length - 1);
         } else {
-            offset -= +slidesWidth.slice(0, slidesWidth.length - 2);
+            offset -= delNotDigits(slidesWidth);
         }
         slidesField.style.transform = `translate(-${offset}px)`;
                
@@ -476,7 +480,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
             slideIndex = slideTo;
 
-            offset = +slidesWidth.slice(0, slidesWidth.length - 2) * (slideTo - 1);
+            offset = delNotDigits(slidesWidth) * (slideTo - 1);
             slidesField.style.transform = `translate(-${offset}px)`;
 
             
