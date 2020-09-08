@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <header class="header">
@@ -19,7 +18,7 @@
             </nav>
         </div>
         <div class="header__right-block">
-            <button data-modal class="btn btn_white">Связаться с нами</button>
+            <button class="btn btn_white" data-modal>Связаться с нами</button>
         </div>
     </header>
     <div class="sidepanel">
@@ -87,7 +86,7 @@
                 </div>
             </div>
             <div class="offer__action">
-                <button data-modal class="btn btn_dark">Связаться с нами</button>
+                <button class="btn btn_dark" data-modal>Связаться с нами</button>
             </div>
         </div>
         <div class="container">
@@ -144,7 +143,7 @@
                     Ваш пол
                 </div>
                 <div class="calculating__choose" id="gender">
-                    <div id="female"class="calculating__choose-item calculating__choose-item_active">Женщина</div>
+                    <div id="female" class="calculating__choose-item calculating__choose-item_active">Женщина</div>
                     <div id="male" class="calculating__choose-item">Мужчина</div>
                 </div>
 
@@ -265,7 +264,7 @@
         <div class="modal__dialog">
             <div class="modal__content">
                 <form action="#">
-                    <div data-close class="modal__close">&times;</div>
+                    <div class="modal__close" data-close>&times;</div>
                     <div class="modal__title">Мы свяжемся с вами как можно быстрее!</div>
                     <input required placeholder="Ваше имя" name="name" type="text" class="modal__input">
                     <input required placeholder="Ваш номер телефона" name="phone" type="phone" class="modal__input">
@@ -274,10 +273,6 @@
             </div>
         </div>
     </div>
-
-
-
-    <script src="js/script.js"></script>
-    <script src="js/test.js></script>
+    <script src="js/bundle.js"></script>
 </body>
 </html>
